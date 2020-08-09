@@ -1,0 +1,22 @@
+train_log: lung_vessel_v2
+GPUs: [2]
+in_channel: 3
+Train:
+ batchsize: 1
+ shuffle: True
+ workers: 1
+ max_epoch: 1500
+ checkpoint_path: ./mynetwork2_v2_air
+ train_list: datalist/followup.txt
+ val_list: datalist/followup_test.txt
+ optim: Adam
+ lr: 0.00005
+ lr_decay_freq: 50
+ lr_decay_rate: 0.9
+ a1: 70
+ a2: 5
+ b1: 5 #6
+ b2: 0 #3
+ b3: 0.2 #0.1 airway
+ b4: 3
+ pretrained: 
